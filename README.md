@@ -6,7 +6,7 @@ clock point run with CAKeyframeAnimation
 - add *UIClockPointView.h*、*UIClockPointView.m*、*easing.h*、*easing.c* to you project.
 - import "UIClockPointView.h"
 
-```
+```Objective-C
 
 // create UIClockPointView
     UIClockPointView *colockSecoend = [[UIClockPointView alloc]initWithFrame:self.view.frame];
@@ -25,3 +25,9 @@ clock point run with CAKeyframeAnimation
     [colockSecoend clockStart];
     
 ```
+
+## Thanks
+
+https://github.com/YouXianMing/EasingAnimation
+
+http://easings.net/
