@@ -1,5 +1,6 @@
 # UIClockPointView
 clock point run with CAKeyframeAnimation
+![](http://images.cnitblog.com/i/607542/201406/041319045679500.gif)
 
 ## How to use?
 
