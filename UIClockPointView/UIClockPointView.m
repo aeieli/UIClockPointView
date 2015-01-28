@@ -1,6 +1,6 @@
 //
 //  UIClockPointView.m
-//  AirBest4S
+//  
 //
 //  Created by aeieli on 15/1/28.
 //  Copyright (c) 2015年 apple. All rights reserved.
@@ -11,6 +11,7 @@
 @implementation UIClockPointView{
     CALayer *layer;
     NSTimer *clockTime;
+    NSInteger runRadians;
 }
 
 // 将角度转换为弧度
@@ -30,7 +31,7 @@
 
 -(void)clockStart{
     _pointImageView.layer.anchorPoint = _anchorPoint;
-    _startRadians = _startRadians/2;
+    runRadians = _startRadians/2;
     _endRadinas = _endRadinas/2;
     if (!_isClockWise) {
         _endRadinas = -_endRadinas;
@@ -49,18 +50,18 @@
 -(void)clockChangeRotation{
     BOOL canRun;
     if (_isClockWise) {
-        canRun = _startRadians < _endRadinas || _isRepeats;
+        canRun = runRadians < _endRadinas || _isRepeats;
     }else{
-        canRun = _startRadians > _endRadinas || _isRepeats;
+        canRun = runRadians > _endRadinas || _isRepeats;
     }
     if (canRun) {
         if (!clockTime.isValid) {
             clockTime = [NSTimer scheduledTimerWithTimeInterval:_durationIntervalTime target:self selector:@selector(clockChangeRotation) userInfo:nil repeats:YES];
         }
         if (_isClockWise) {
-            [self clockMoveToRotationTransFormValue:_startRadians TodVale:(++_startRadians) duration:_durationIntervalTime/2];
+            [self clockMoveToRotationTransFormValue:runRadians TodVale:(++runRadians) duration:_durationIntervalTime/2];
         }else{
-            [self clockMoveToRotationTransFormValue:_startRadians TodVale:(--_startRadians) duration:_durationIntervalTime/2];
+            [self clockMoveToRotationTransFormValue:runRadians TodVale:(--runRadians) duration:_durationIntervalTime/2];
         }
         
     }else{
