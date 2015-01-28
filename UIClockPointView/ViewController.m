@@ -21,7 +21,6 @@
     [colockSecoend setBackgroundColor:[UIColor whiteColor]];
     colockSecoend.pointImageView = [[UIImageView alloc]initWithFrame:CGRectMake(colockSecoend.frame.size.width/2-60, colockSecoend.frame.size.height/2, 120, 3)];
     [colockSecoend.pointImageView setImage:[UIImage imageNamed:@"FREE_03"]];
-    [colockSecoend addSubview:colockSecoend.pointImageView];
     
     colockSecoend.anchorPoint = CGPointMake(0.1, 0);
     [self.view addSubview:colockSecoend];

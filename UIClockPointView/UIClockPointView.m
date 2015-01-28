@@ -30,6 +30,7 @@
 }
 
 -(void)clockStart{
+    [self addSubview:_pointImageView];
     _pointImageView.layer.anchorPoint = _anchorPoint;
     runRadians = _startRadians/2;
     _endRadinas = _endRadinas/2;
